@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Negociações</title>
+    <link rel="stylesheet" href="css/bootstrap-superhero.css">
+
+    <!--Tema Bootstrap Alura TypeScript-->
+    <!--<link rel="stylesheet" href="css/bootstrap-theme.css">-->
+</head>
+
+<body class="container jumbotron" style="background-color:#2B3E50;">
+
+    <h1 class="display-2 text-center font-weight-light">Negociações</h1>
+
+    <hr>
+
+    <div id="mensagemView"></div>
+
+    <form class="form">
+
+        <div class="form-group">
+            <label for="data">Data</label>
+            <input id="data" type="date" class="form-control" required autofocus />
+            <small class="form-text text-muted">Negociações somente são disponiveis em dias uteis.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="quantidade">Quantidade</label>
+            <input id="quantidade" type="number" min="1" step="1" class="form-control" value="1" required />
+        </div>
+
+        <div class="form-group">
+            <label for="valor">Valor</label>
+            <input id="valor" type="number" class="form-control" min="0.01" step="0.01" value="0.0" required />
+        </div>
+
+        <button class="btn btn-outline-info" type="submit">Incluir</button>
+        <button id="botao-importar" class="btn btn-outline-info" type="button">Importar Negociações</button>
+    </form>
+    <br>
+    <div id="mensagemImport"></div>
+
+    <br>
+    <br>
+    <div id="negociacoesView">
+
+        <script src="lib/jquery.min.js"></script>
+        <script src="lib/system.js"></script>
+        <script>
+            System.defaultJSExtensions = true; //Omitindo extenssões (.js)
+            System.import('js/app.js').catch(err => console.log(err)); //Atribuindo módulo principal para import
+        </script>
+</body>
+
+</html>
